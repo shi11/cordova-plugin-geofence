@@ -118,7 +118,7 @@
         </js-module>
     </platform>
 
-    <!-- ios -->
+    <!-- ios
     <platform name="ios">
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string>${EXECUTABLE_NAME} Would Like to Use Your Current Location Even In Background.</string>
@@ -143,4 +143,5 @@
         <framework src="libsqlite3.dylib"/>
         <framework src="WebKit.framework" weak="true" />
     </platform>
+    -->
 </plugin>
