@@ -1,11 +1,6 @@
 # Cordova Geofence Plugin
 
-[![Code Climate](https://codeclimate.com/github/cowbell/cordova-plugin-geofence/badges/gpa.svg)](https://codeclimate.com/github/cowbell/cordova-plugin-geofence)
 [![version](https://badge.fury.io/js/cordova-plugin-geofence.png)](https://badge.fury.io/js/cordova-plugin-geofence)
-
-iOS Build [![Build Status](https://travis-ci.org/cowbell/cordova-plugin-geofence.svg?branch=master)](https://travis-ci.org/cowbell/cordova-plugin-geofence)
-
-Android Build [![Build Status](https://circleci.com/gh/cowbell/cordova-plugin-geofence.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/cowbell/cordova-plugin-geofence)
 
 Plugin to monitor circular geofences using mobile devices. The purpose is to notify user if crossing the boundary of the monitored geofence.
 
@@ -86,6 +81,20 @@ For Cordova projects
 For PhoneGap projects
 
 `<preference name="swift-version" value="2.3" />`
+
+### iOS Quirks
+
+Since iOS 10 it's mandatory to add a `NSLocationAlwaysUsageDescription` and `NSLocationWhenInUseUsageDescription` entries in the info.plist.
+
+`NSLocationWhenInUseUsageDescription` describes the reason that the app accesses the user's location.
+`NSLocationAlwaysUsageDescription` describes the reason that the app accesses the user's location when not in use (in the background).
+
+When the system prompts the user to allow access, this string is displayed as part of the dialog box. To add this entry you can pass the variable `GEOFENCE_IN_USE_USAGE_DESCRIPTION` and `GEOFENCE_ALWAYS_USAGE_DESCRIPTION` on plugin install.
+
+Example:
+`cordova plugin add cordova-plugin-geofence --variable GEOFENCE_IN_USE_USAGE_DESCRIPTION="your usage message" --variable GEOFENCE_ALWAYS_USAGE_DESCRIPTION="your usage message"`
+
+If you don't pass the variable, the plugin will add a default string as value.
 
 ## Windows phone 8.1
 
@@ -400,4 +409,4 @@ Add `--verbose` at the end of `cordova-paramedic` command.
 
 This software is released under the [Apache 2.0 License](http://opensource.org/licenses/Apache-2.0).
 
-© 2014-2016 Cowbell-labs. All rights reserved
+© 2014-2017 Cowbell-labs. All rights reserved
