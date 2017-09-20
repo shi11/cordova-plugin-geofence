@@ -84,7 +84,7 @@
         </config-file>
 
     </platform>
-    <!-- wp8 -->
+    <!-- wp8
     <platform name="wp8">
         <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
             <Capability Name="ID_CAP_LOCATION" />
@@ -98,8 +98,9 @@
         <framework src="src/wp8/GeofenceComponent.winmd" custom="true" />
         <source-file src="src/wp8/GeofencePlugin.cs" />
     </platform>
+    -->
 
-    <!-- windows -->
+    <!-- windows
     <platform name="windows">
         <config-file target="package.appxmanifest" parent="/Package/Capabilities">
             <DeviceCapability Name="location" />
@@ -116,7 +117,7 @@
         <js-module src="src/windows/GeofenceProxy.js" name="GeofenceProxy">
             <runs />
         </js-module>
-    </platform>
+    </platform>-->
 
     <!-- ios
     <platform name="ios">
